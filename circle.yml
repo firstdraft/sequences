@@ -1,0 +1,6 @@
+machine:
+  ruby:
+    version: 2.2.4
+test:
+  override:
+    - rspec --order default --format documentation --format j --out $CIRCLE_ARTIFACTS/output.json
