@@ -19,11 +19,12 @@ feature "The index page" do
     expect(page).to have_selector("li", text: "2, 4, 8 Obeys the rule")
   end
 
-
   scenario "has a reset link", points: 5 do
     visit "/all_guesses"
 
     expect(page).to have_link("Reset")
   end
+
+  # next test
 
 end
