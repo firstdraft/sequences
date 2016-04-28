@@ -30,6 +30,5 @@ feature "The index page" do
 
     expect(page).to have_link("Blah")
   end
-  
 
 end
