@@ -31,13 +31,16 @@
 </ul>
 
 <form action="/create_guess">
-  <label>
+  <p>
     Enter a sequence:
-  </label>
+  </p>
 
-  <input type="text" name="first_number" placeholder="The first number">
-  <input type="text" name="second_number" placeholder="The second number">
-  <input type="text" name="third_number" placeholder="The third number">
+  <label for="first">First number:</label>
+  <input id="first" type="text" name="first_number" placeholder="The first number">
+  <label for="second">Second number:</label>
+  <input id="second" type="text" name="second_number" placeholder="The second number">
+  <label for="third">Third number:</label>
+  <input id="third" type="text" name="third_number" placeholder="The third number">
 
   <button>
     Check
@@ -47,12 +50,13 @@
 <hr>
 
 <form action="/show_answer">
-  <label>
+  <p>
     When you think you know the rule, describe it in words below and then submit your answer. <strong>Make sure you’re right; you won’t get a second chance.</strong>
-  </label>
+  </p>
 
+  <label for="your_answer">Your answer:</label>
   <div>
-    <textarea name="rule" rows="8" cols="40" placeholder="Describe what you think the rule is"></textarea>
+    <textarea id="your_answer" name="rule" rows="8" cols="40" placeholder="Describe what you think the rule is"></textarea>
   </div>
 
   <button>

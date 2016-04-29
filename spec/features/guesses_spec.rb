@@ -19,10 +19,38 @@ feature "The index page" do
     expect(page).to have_selector("form", count: 2)
   end
 
+  it "has a label and input for \"First number:\"", points: 5 do
+    visit "/all_guesses"
+
+    expect(page).to have_selector("label", text: "First number:")
+    # Write test for input with matching ID
+  end
+
+  it "has a label and input for \"Second number:\"", points: 5 do
+    visit "/all_guesses"
+
+    expect(page).to have_selector("label", text: "Second number:")
+    # Write test for input with matching ID
+  end
+
+  it "has a label and input for \"Third number:\"", points: 5 do
+    visit "/all_guesses"
+
+    expect(page).to have_selector("label", text: "Third number:")
+    # Write test for input with matching ID
+  end
+
   it "has a \"Check\" button", points: 5 do
     visit "/all_guesses"
 
     expect(page).to have_button("Check")
+  end
+
+  it "has a label and input for \"Your answer:\"", points: 5 do
+    visit "/all_guesses"
+
+    expect(page).to have_selector("label", text: "Your answer:")
+    # Write test for input with matching ID
   end
 
   it "has a \"I think I know it\" button", points: 5 do
@@ -47,13 +75,39 @@ feature "The answer form" do
     expect(current_path).to eq "/show_answer"
   end
 
-  it "displays the user's answer on the answer page" do
+  it "displays the user's answer on the answer page", points: 5 do
     visit "/all_guesses"
 
-    fill_in("rule", with: "A serviceable substitute for wit")
+    fill_in("Your answer:", with: "A serviceable substitute for wit")
 
     click_on "I think I know it"
 
     expect(page).to have_content("A serviceable substitute for wit")
+  end
+end
+
+feature "The sequence form" do
+  it "goes back to the index page when submitted", points: 5 do
+    visit "/all_guesses"
+
+    fill_in("first", with: "3")
+    fill_in("second", with: "6")
+    fill_in("third", with: "12")
+
+    click_on "Check"
+
+    expect(current_path).to eq "/all_guesses"
+  end
+
+  it "displays the new sequence on the index page", points: 5 do
+    visit "/all_guesses"
+
+    fill_in("first", with: "3")
+    fill_in("second", with: "6")
+    fill_in("third", with: "12")
+
+    click_on "Check"
+
+    expect(page).to have_content("3, 6, 12")
   end
 end
