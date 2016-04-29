@@ -117,7 +117,7 @@ RSpec.configure do |config|
         "#{summary.example_count} tests",
         "#{summary.failure_count} failures",
         "#{earned_points}/#{total_points} points",
-        "#{score}%",
+        "#{earned_points.to_f / total_points}%",
       ].join(", ")
     end
 
