@@ -4,7 +4,7 @@ machine:
 
 notify:
   webhooks:
-    - url: https://grades.firstdraft.com/builds
+    - url: https://grades-production.herokuapp.com/builds
 
 test:
   override:
