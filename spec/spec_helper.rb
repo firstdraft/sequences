@@ -97,7 +97,7 @@ RSpec.configure do |config|
         map { |example| example.metadata[:points] }.
         sum
 
-      score = summary.
+      earned_points = summary.
         examples.
         select { |example| example.execution_result.status == :passed }.
         map { |example| example.metadata[:points] }.
@@ -109,13 +109,15 @@ RSpec.configure do |config|
         :failure_count => summary.failure_count,
         :pending_count => summary.pending_count,
         :total_points => total_points,
-        :score => score,
+        :earned_points => earned_points,
+        :score => earned_points.to_f / total_points
       }
 
       @output_hash[:summary_line] = [
         "#{summary.example_count} tests",
         "#{summary.failure_count} failures",
-        "#{score}/#{total_points} points",
+        "#{earned_points}/#{total_points} points",
+        "#{score}%",
       ].join(", ")
     end
 
