@@ -25,13 +25,6 @@ feature "The index page" do
     expect(page).to have_link("Reset")
   end
 
-  scenario "has a blah link", points: 5 do
-    visit "/all_guesses"
-
-    expect(page).to have_link("Blah")
-  end
 
 
-
-  
 end
