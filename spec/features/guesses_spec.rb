@@ -99,7 +99,7 @@ feature "The sequence form" do
     expect(current_path).to eq "/all_guesses"
   end
 
-  it "displays the new sequence on the index page", points: 5 do
+  it "displays a single new sequence on the index page", points: 5 do
     visit "/all_guesses"
 
     fill_in("first", with: "3")
@@ -109,5 +109,24 @@ feature "The sequence form" do
     click_on "Check"
 
     expect(page).to have_content("3, 6, 12")
+  end
+
+  it "displays multiple new sequences on the index page", points: 5 do
+    visit "/all_guesses"
+
+    fill_in("first", with: "3")
+    fill_in("second", with: "6")
+    fill_in("third", with: "12")
+
+    click_on "Check"
+
+    fill_in("first", with: "4")
+    fill_in("second", with: "8")
+    fill_in("third", with: "16")
+
+    click_on "Check"
+
+    expect(page).to have_content("3, 6, 12")
+    expect(page).to have_content("4, 8, 16")
   end
 end
