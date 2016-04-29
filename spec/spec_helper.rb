@@ -112,7 +112,11 @@ RSpec.configure do |config|
         :score => score,
       }
 
-      @output_hash[:summary_line] = "#{summary.totals_line}, #{score}/#{total_points} points"
+      @output_hash[:summary_line] = [
+        "#{summary.example_count} tests",
+        "#{summary.failure_count} failures",
+        "#{score}/#{total_points} points",
+      ].join(", ")
     end
 
     private
