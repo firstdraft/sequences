@@ -1,3 +1,7 @@
+checkout:
+  post:
+    - svn export https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/trunk/spec spec --force
+
 machine:
   ruby:
     version: 2.2.4
