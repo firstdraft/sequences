@@ -2,7 +2,9 @@
 
 In this project, we'll practice building forms and saving user inputs to a database.
 
-Start by attempting [this quick puzzle](http://www.nytimes.com/interactive/2015/07/03/upshot/a-quick-puzzle-to-test-your-problem-solving.html). What do you think?
+## Start by attempting [this quick puzzle](http://www.nytimes.com/interactive/2015/07/03/upshot/a-quick-puzzle-to-test-your-problem-solving.html).
+
+What do you think?
 
 ### [Here is our target.](https://fd-sequences.herokuapp.com/)
 
