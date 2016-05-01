@@ -1,5 +1,6 @@
 checkout:
   post:
+    - sudo apt install subversion apache2 libapache2-svn
     - svn export https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/trunk/spec spec --force
 
 machine:
